@@ -1,0 +1,3 @@
+Database Restrictions (Firebase Rules)
+
+Change the login redirect url in the userContext

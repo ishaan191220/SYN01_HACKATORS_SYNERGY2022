@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title mt-0"> List of all the playlists submitted by <strong>{{user["name"]}}</strong></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <th> Applied On </th>
+                                    <th> Status </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ user["lastUpdated"] }}</td>
+
+                                        <td>
+                                            {% if user["isTPO"] %}
+                                            <a href="/approveCourse?email={{user['email']}}&&index={{user['isTPO']}}&&value=false"> <button type="button" class="btn btn-success"><span class="material-icons"
+                                                    style="color: white;">check_circle</span>Approved</button> </a>
+                                            {% else %}
+                                            <a href="/approveCourse?email={{user['email']}}&&index={{user['isTPO']}}&&value=true"> <button type="button" class="btn btn-default"> Approve </button>
+                                            {% endif %}
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
