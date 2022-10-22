@@ -173,3 +173,4 @@ if(tree.rootNode.data == currentHash){
 }else{
     console.log(currentHash);
 }
+//
